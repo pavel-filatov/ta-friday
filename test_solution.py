@@ -33,6 +33,9 @@ from solution import parse_address
 
         # What if there is only a street? Now we return nothing but is it correct?
         ("Unter den Linden", None),
+
+        # If "No." is provided with a dot
+        ("Friedrichstr. No. 90", {"street": "Friedrichstr.", "housenumber": "No. 90"})
     ),
 )
 def test_parse_address(address_string: str, expected: Dict[str, str]):
